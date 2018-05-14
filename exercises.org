@@ -1,0 +1,358 @@
+#+TITLE: Exercises
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t d:(not "HINT")
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+#+SETUPFILE: ../theme-bigblow.setup
+
+** DONE WDT
+   CLOSED: [2018-05-14 Mon 16:19]
+   :LOGBOOK:
+   CLOCK: [2018-05-14 Mon 16:16]--[2018-05-14 Mon 16:19] =>  0:03
+   :END:
+  PVP the result of evaluating the following (paying special attention to the
+  more-than-syntactic difference between the \lsquo{}starless\rsquo{} form of =let= and the
+  \lsquo{}star-suffixed\rsquo{} form):
+
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3)) (+ a b c))
+#+END_SRC
+
+#+RESULTS:
+: 6
+
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3)) (+ a b c d))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3)) [+ a b c d])
+#+END_SRC
+
+#+RESULTS:
+: [+ a b c d]
+
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3) (+ 4)) (+ a b c +))
+#+END_SRC
+
+#+RESULTS:
+: 10
+
+#+BEGIN_SRC emacs-lisp
+  (makunbound 'a)
+  (let* ((a 1) (b 2) (c 3) (d (+ a 4))) (+ a b c d))
+#+END_SRC
+
+#+RESULTS:
+: 11
+
+#+BEGIN_SRC emacs-lisp
+  (let ((a 1) (b 2) (c 3) (d (+ a 4))) (+ a b c d))
+#+END_SRC
+
+#+RESULTS:
+: 11
+
+***  I'm not sure what the star is doing. I believe that expressions are evaluated from right to left. The a being assigned to d might be void
+*** and that's why we might want to use the star, to say that we'll assign a value to a later.
+** DONE TEJ
+   CLOSED: [2018-05-14 Mon 16:34]
+   :LOGBOOK:
+   CLOCK: [2018-05-14 Mon 16:23]--[2018-05-14 Mon 16:34] =>  0:11
+   :END:
+  A function-as-association between elements of a domain and elements of a
+  codomain, for \ldquo{}small\rdquo domains and codomains, inspired so-called \ldquo{}association
+  lists\rdquo (or alists) and the =assoc= (and associated) functions.
+
+  =(assoc KEY LIST)= returns non-nil if KEY is \ldquo{}equal\rdquo to the first element of
+  an element of LIST. The value is actually the first element of LIST whose
+  first element equals KEY.
+
+  For example, here is a function that uses an alist to look up the RGB values
+  of a given color name:
+
+#+BEGIN_SRC emacs-lisp :results silent
+  (defun lookup-rgb (color-name)
+    (rest (assoc color-name
+                 '(("red" 255 0 0) ("green" 0 255 0) ("blue" 0 0 255)))))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp :results raw
+  (lookup-rgb "blue")
+#+END_SRC
+
+#+RESULTS:
+(0 0 255)
+
+: (0 0 255)
+
+  What if the color name is not in the alist?
+
+#+BEGIN_SRC emacs-lisp :results raw
+  (lookup-rgb "grue")
+#+END_SRC
+
+#+RESULTS:
+nil
+
+: nil
+
+  There are several variations of =assoc=. Find and give examples of using them.
+
+**** assoc, assoc-if, and assoc-if-not return the first cons in alist whose car satisfies the test, or nil if no such cons is found.
+(assoc 'a '((a . 1) (b . 2) (c . 3))) => (A . 1)
+(assoc 'x '((a . 1) (b . 2) (c . 3))) => NIL
+(assoc 'b '((a . 1) (b . 2) (c . 3) (b . 4))) => (B . 2)
+(assoc "b" '(("a" . 1) ("b" . 2))) => NIL
+(assoc "b" '(("a" . 1) ("b" . 2)) :test #'equal) => ("b" . 2)
+(assoc 7 '((6 . a) (9 . b)) :key #'1+) => (6 . A)
+(assoc 5 nil) => NIL
+**Extracted from jtra.cz**
+
+** DONE WFK
+   CLOSED: [2018-05-14 Mon 16:38]
+   :LOGBOOK:
+   CLOCK: [2018-05-14 Mon 16:38]--[2018-05-14 Mon 16:38] =>  0:00
+   :END:
+  In the function-as-map context, here is another interpretation:
+
+  A \ldquo{}map\rdquo type (AKA associative array, AKA hashtable) is found in many
+  languages. For example, C++:
+#+BEGIN_SRC C++ :results output
+  #include <iostream>
+  #include <map>
+  using namespace std;
+
+  int main() {
+     map<string, string> mymap;
+
+     mymap["one"] = "red";
+     mymap["two"] = "blue";
+     mymap["three"] = "green";
+
+     for (auto const &ent1 : mymap) {
+        cout << ent1.first << " : " << ent1.second << endl;
+     }
+  }
+#+END_SRC
+
+#+RESULTS:
+
+: one : red
+: three : green
+: two : blue
+
+  And python:
+#+BEGIN_SRC python :results output
+  mymap = {}
+
+  mymap["one"] = "red"
+  mymap["two"] = "blue"
+  mymap["three"] = "green"
+
+  if __name__ == "__main__":
+          for key in mymap.keys():
+                  print key + " : " + str(mymap[key])
+#+END_SRC
+
+: three : green
+: two : blue
+: one : red
+
+  And of course elisp:
+#+BEGIN_SRC emacs-lisp :results output
+  (let* ((mymap (make-hash-table :test 'equal)))
+    (puthash "one" "red" mymap)
+    (puthash "two" "blue" mymap)
+    (puthash "three" "green" mymap)
+    (pp (list (gethash "one" mymap)
+              (gethash "two" mymap)
+              (gethash "three" mymap)))
+    (maphash (lambda (key value) (princ (format "%s : %s\n" key value))) mymap))
+#+END_SRC
+
+#+RESULTS:
+: ("red" "blue" "green")
+: one : red
+: two : blue
+: three : green
+
+: ("red" "blue" "green")
+: one : red
+: two : blue
+: three : green
+
+  What happens if you omit the =:test 'equal= parameters to the
+  =make-hash-table= call?
+  
+*** a Map has a value and a key. It seems like it adds everything correctly but instead of printing the colors on the top, it will print 'nil'.
+** DONE TER
+   CLOSED: [2018-05-14 Mon 16:49]
+   :LOGBOOK:
+   CLOCK: [2018-05-14 Mon 16:41]--[2018-05-14 Mon 16:41] =>  0:00
+   :END:
+  This exercise explores /looping/ versus /mapping/.
+
+  What does the =morphify= function defined below do? Think about it, then PVP
+  the result of the call to it that follows.
+
+#+BEGIN_SRC emacs-lisp :results silent
+  (defun morphify (fun lst)
+    (loop for item in lst
+          collect (funcall fun item)))
+#+END_SRC
+
+  Note the quotes:
+
+#+BEGIN_SRC emacs-lisp :results raw
+  (morphifyr (quote downcase) (quote ("THIS" "IS" "TOO" "LOUD")))
+#+END_SRC
+
+#+RESULTS:
+(this is too loud)
+(this is too loud)
+
+  The =morphify= function is essentially a /mapping/ function, which means it
+  takes a passed-in function (=fun=) and a passed-in list (=lst=), and /maps fun
+  over lst/, i.e., the results of calling the function =fun= on each element of
+  the list =lst= are collected into a new list, which is returned.
+
+  This shows one way (iteratively) a /map/ function could be implemented.
+  Another way is /recursively/, as in:
+
+#+BEGIN_SRC emacs-lisp :results silent
+  (defun morphifyr (fun lst)
+    (if (null lst)
+        nil
+      (append (list (funcall fun (first lst))) (morphifyr fun (rest lst)))))
+#+END_SRC
+
+  Explain how this version of =morphify= works.
+  
+*** Both functions do the same thing but their implementation is differnet. One uses a loop and the other function is recursive(calls itself).
+** DONE TGE
+   CLOSED: [2018-05-14 Mon 16:49]
+   :LOGBOOK:
+   CLOCK: [2018-05-14 Mon 16:48]--[2018-05-14 Mon 16:48] =>  0:00
+   :END:
+  Note the difference if -13 is used instead of 13 below:
+#+BEGIN_SRC emacs-lisp :results silent
+  (defun compute-floor-the-hard-way (dividend divisor)
+    (- (/ dividend (float divisor)) (/ (mod dividend divisor) (float divisor))))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp :results raw
+  (let* ((number (/ 13 4.0))
+         (floor1 (floor number))
+         (floor2 (compute-floor-the-hard-way -13 4.0)))
+    (list number floor1 floor2))
+#+END_SRC
+
+: (3.25 3 3.0)
+
+  Is the hard way correct?
+  
+*** I couldn't get it to compile but I believe the code is wrong.
+** DONE THP
+   CLOSED: [2018-05-14 Mon 16:55]
+   :LOGBOOK:
+   CLOCK: [2018-05-14 Mon 16:49]--[2018-05-14 Mon 16:55] =>  0:06
+   :END:
+  Graph the floor and ceiling functions f(x) = \lfloor{}x\rfloor and f(x) = \lceil{}x\rceil for real
+  number values of x in the interval [-5.0 .. 5.0].
+
+(clnuplot:write-plot  
+ (clnuplot:make-plot   
+  :lines-points  
+  '((0 0) (1 1) (2 2) (3 3) (4 4) (5 5))  
+  :pointsize 2.0  
+  :linewidth 3.0  
+  :filename "simple-example"  
+  :xlabel "Time spent in cuphead"  
+  :ylabel "How good is Bro. Benning at this game?"  
+  :x-coord #'first  
+  :y-coord #'second  
+  :title "Hours of gameplay vs. mastery of cuphead"  
+  :ymin 0.0)  
+ :pdf)
+  
+*** Your answer goes here.
+** TODO WKM
+  Which of these statements about floor and ceiling are correct, for any real
+  number $x$ and any integers $n$ and $m$?
+  1. $x - 1 < \lfloor{}x\rfloor \le x \le \lceil{}x\rceil < x + 1$.
+  2. $\lfloor{}-x\rfloor = -\lceil{}x\rceil$.
+  3. $\lceil{}-x\rceil = -\lfloor{}x\rfloor$.
+  4. $\lfloor{}x + n\rfloor = \lfloor{}x\rfloor + n$.
+  5. $\lceil{}x + n\rceil = \lceil{}x\rceil + n$.
+  6. $\lfloor{}\frac{n}{2}\rfloor + \lceil{}\frac{n}{2}\rceil = n$.
+  7. $\lfloor{}\frac{n}{2}\rfloor + \lfloor{}\frac{n + 1}{2}\rfloor = n$.
+  8. $\lceil{}\frac{n}{2}\rceil + \lceil{}\frac{n + 1}{2}\rceil = n$.
+  9. $\lfloor{}\frac{n + m}{2}\rfloor + \lceil{}\frac{n - m + 1}{2}\rceil = n$ (for any $m$, not just $m =
+     0$ as in statement 7).
+  10. $\lceil{}\frac{n + m}{2}\rceil + \lceil{}\frac{n - m + 1}{2}\rceil = n$ (for any $m$, not just $m =
+      0$ as in statement 8).
+  
+*** .
+** TODO TIW
+
+  Define the function \ldquo{}round to nearest integer\rdquo using the floor and ceiling
+  functions, together with the \ldquo{}Iverson bracket\rdquo function. (A number whose
+  fractional part is less than one-half should be rounded down, otherwise up.)
+
+***  Your answer goes here.
+** TODO TKG
+  Explore the inverse of =assoc= via the functions =rassoc= and associates.
+
+***  Your answer goes here.
+** DONE WOV
+   CLOSED: [2018-05-14 Mon 17:29]
+   :LOGBOOK:
+   CLOCK: [2018-05-14 Mon 17:23]--[2018-05-14 Mon 17:29] =>  0:06
+   :END:
+  Identify the formula or rule that generates the terms of each sequence:
+  1. =[7 14 21 28 35 42 49 56 63 70 ...]= 7 * n
+  2. =[7 11 15 19 23 27 31 35 39 43 ...]= (4*n) + 3
+  3. =[3 4 6 9 13 18 24 31 39 48 ...]= (3 + 1) (4 + 2) (6 + 3) (9 + 4)...
+  4. =[1 10 11 100 101 110 111 1000 1001 1010 ...]= counting numbers in binary
+  5. =[1 1 2 3 5 8 13 21 34 55 ...]= the sum of the previous two numbers. Fibbonaci sequence
+  6. =[7 22 11 34 17 52 26 13 40 20 ...]= If the current number is even, divide it by two; else if it is odd, multiply it by three and add one. 
+  7. =[2 1 3 4 7 11 18 29 47 76 ...]=every third term is a sum of previous two
+  8. =[6 12 24 48 96 192 384 768 1536 3072 ...]= 6 * (2*n) n>= 1
+  9. =[6 18 54 162 486 1458 4374 13122 39366 118098 ...]= Current number * 3
+  10. =[2 3 5 7 11 13 17 19 23 29 ...]= Prime numbers? 
+
+***  Answers next to each item.
+** DONE WQW
+   CLOSED: [2018-05-14 Mon 17:31]
+   :LOGBOOK:
+   CLOCK: [2018-05-14 Mon 17:31]--[2018-05-14 Mon 17:31] =>  0:00
+   :END:
+  Classify the following lisp functions according as each is or is not a predicate:
+  | Predicate? | Yes or No? |
+  |------------+------------|
+  | =list=     |            |
+  | =listp=    |            |
+  | =integerp= |            |
+  | =vector=   |            |
+  | =vectorp=  |            |
+  | =symbolp=  |            |
+  | =zerop=    |            |
+  | =evenp=    |            |
+  | =oddp=     |            |
+
+***  Your answer goes here. (Replicate the above table.)i
+
+  | Predicate? | Yes or No? |
+  |------------+------------|
+  | =list=     |     N      |
+  | =listp=    |     Y      |
+  | =integerp= |     Y      |
+  | =vector=   |     N      |
+  | =vectorp=  |     Y      |
+  | =symbolp=  |     Y      |
+  | =zerop=    |     Y      |
+  | =evenp=    |     Y      |
+  | =oddp=     |     Y      |
+

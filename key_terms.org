@@ -1,0 +1,166 @@
+#+TITLE: Project00 Key_Terms
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+
+NOTE: Be sure, when you are searching that they are logical defintions, that is
+they are definitions that relate to math and Logic.
+
+Example
+* Superman Cannot be jumping really high
+** identify
+Superman is sometimes debated around his flying abilities
+Some say that he is merely jumping and due to his speed and 
+strength it appears to you and I that he is merely jumping and
+moving his body to go up and down after that.
+** Define
+This is obviously false.  Superman is indeed levitating and not
+Jumping
+** Example/Explanation
+If Superman were jumping when he catches Lois Lane she would be cut in half
+due to the speed and trajectory of superman being the man of steel. This is because
+he would have to slow/stop to the same speed as Lois to catch her and then "rejump".
+He visually does not appear to be 'rejumping' and Lois isnt cut in half.  DONE!
+** Non-Trivial Test question
+What would be the best way to describe Superman's flight
+
+
+a. He jumps and with his strength and speed is able to alter his path
+
+
+b. He flys like a bird and flaps his wings
+
+
+c. He levitates, he's an alien "HEELLLLLOOOO!"
+
+
+d. Why do I care about Superman again, he's in the D.C. universe ... so dark and terrible movies!
+
+Contrapositive: The contrapositive of the statement has its antecedent and consequent inverted and flipped.
+
+Converse: In logic, the converse of a categorical or implicational statement is the result of reversing its two parts.
+
+inverse: In logic, an inverse is a type of conditional sentence which is an immediate inference made from another conditional sentence.
+
+R: real numbers: In mathematics, a real number is a value of a continuous quantity that can represent a distance along a line. 
+
+Z: integers: is a number that can be written without a fractional component.
+
+Q: rational numbers: In mathematics, a rational number is any number that can be expressed as the quotient or fraction p/q of two integers, a numerator p and a non-zero denominator q. 
+
+predicate: In mathematical logic, a predicate is commonly understood to be a Boolean-valued function P: X→ {true, false}, called the predicate on X.
+
+Domain: the domain of definition (or simply the domain) of a function is the set of "input" or argument values for which the function is defined.
+
+CoDomain: In mathematics, the codomain or target set of a function is the set Y into which all of the output of the function is constrained to fall. 
+It is the set Y in the notation f: X → Y.
+
+quantifier: In logic, quantification specifies the quantity of specimens in the domain of discourse that satisfy an open formula.
+ The two most common quantifiers mean "for all" and "there exists". 
+For example, in arithmetic, quantifiers allow one to say that the natural numbers go on forever, 
+by writing that for all n (where n is a natural number), there is another number (say, the successor of n) which is one bigger than n.
+
+antecedent: An antecedent is the first half of a hypothetical proposition, whenever the if-clause precedes the then-clause. In some contexts the antecedent is called the protasis.
+
+consequent: A consequent is the second half of a hypothetical proposition. In the standard form of such a proposition, it is the part that follows "then".
+In an implication, if P implies Q, then P is called the antecedent and Q is called the consequent. In some contexts the consequent is called the apodosis.
+
+Examples: one of a number of things, or a part of something, taken to show the character of the whole. 
+
+Set: In mathematics, a set is a collection of distinct objects, considered as an object in its own right. 
+
+Fallacy: A fallacy is an incorrect result arrived at by apparently correct, though actually specious reasoning.
+The great Greek geometer Euclid wrote an entire book on geometric fallacies. 
+
+biconditional: In logic and mathematics, the logical biconditional (sometimes known as the material biconditional) is the logical connective of two statements 
+asserting " P if and only if Q", where P is an antecedent and Q is a consequent.
+
+sufficient condition: If P is sufficient for Q, then knowing P to be true is adequate grounds to conclude that Q is true; 
+however, knowing P to be false does not meet a minimal need to conclude that Q is false.
+
+necessary condition: The assertion that Q is necessary for P is colloquially equivalent to "P cannot be true unless Q is true" or "if Q is false, then P is false".
+
+~p: Negation. It will change the value from 0->1 or 1->0.
+
+p ^ q: And: Both statements have to be true to output true.
+
+p V q: Or. Either statement or both can be true to output true.
+
+p XOR q: Exclusive or. Outputs true if either statement, but not both, is true.
+
+p == q. Equal value. 
+
+p -> q: The material conditional is used to form statements of the form p → q (termed a conditional statement) which is read as "if p then q".
+
+p <--> q: Biconditional
+
+Three dots in a triangle: Therefore.
+
+upside down A: In predicate logic, a universal quantification is a type of quantifier, a logical constant which is interpreted as "given any" or "for all". 
+It expresses that a propositional function can be satisfied by every member of a domain of discourse. 
+In other words, it is the predication of a property or relation to every member of the domain.
+
+Backwards E: In predicate logic, an existential quantification is a type of quantifier, a logical constant which is interpreted as "there exists", "there is at least one", or "for some". 
+Some sources use the term existentialization to refer to existential quantification.
+
+union: In set theory, the union (denoted by ∪) of a collection of sets is the set of all elements in the collection. 
+It is one of the fundamental operations through which sets can be combined and related to each other.
+
+intersection: In mathematics, the intersection A ∩ B of two sets A and B is the set that contains all elements of A that also belong to B 
+(or equivalently, all elements of B that also belong to A), but no other elements.
+
+Commutative laws: In mathematics, a binary operation is commutative if changing the order of the operands does not change the result. 
+It is a fundamental property of many binary operations, and many mathematical proofs depend on it.
+
+associative laws: In mathematics, the associative property[1] is a property of some binary operations. 
+In propositional logic, associativity is a valid rule of replacement for expressions in logical proofs.
+
+Within an expression containing two or more occurrences in a row of the same associative operator, the order in which the operations are performed does not matter 
+as long as the sequence of the operands is not changed. 
+
+distributive laws: In abstract algebra and formal logic, the distributive property of binary operations generalizes the distributive law from boolean algebra and elementary algebra. 
+In propositional logic, distribution refers to two valid rules of replacement. 
+The rules allow one to reformulate conjunctions and disjunctions within logical proofs.
+
+identity laws: In mathematics an identity is an equality relation A = B, such that A and B contain some variables and A and B 
+produce the same value as each other regardless of what values (usually numbers) are substituted for the variables.
+
+negation laws: In logic, negation, also called the logical complement, is an operation that takes a proposition P to another proposition "not P", 
+written \neg P (¬P), which is interpreted intuitively as being true when P is false, and false when P is true.
+
+double negative law: In propositional logic, double negation is the theorem that states that "If a statement is true, then it is not the case that the statement is not true." 
+This is expressed by saying that a proposition A is logically equivalent to not (not-A), or by the formula A ≡ ~(~A) where the sign ≡ expresses logical equivalence 
+and the sign ~ expresses negation.
+
+idempotent laws: is the property of certain operations in mathematics and computer science that they can be applied multiple times 
+without changing the result beyond the initial application.
+
+universal bound laws: Universal bound law says that P or T = T and that P and F = False every time.
+
+De morgan's laws are a pair of transformation rules that are both valid rules of inference.
+
+absorption laws: n algebra, the absorption law or absorption identity is an identity linking a pair of binary operations.
+
+Two binary operations, ¤(or) and ⁂(and), are said to be connected by the absorption law if:
+
+    a ¤ (a ⁂ b) = a ⁂ (a ¤ b) = a.
+
+negations of t and c: ∼t ≡ c
+
+∼c ≡ t
+
+vacuously true: In mathematics and logic, a vacuous truth is a statement that asserts that all members of the empty set have a certain property. 
+For example, the statement "all cell phones in the room are turned off" will be true whenever there are no cell phones in the room. 
+In this case, the statement "all cell phones in the room are turned on" would also be vacuously true, as would the conjunction of the two: 
+"all cell phones in the room are turned on and turned off".
+
+Modus Ponens: It can be summarized as "P implies Q and P are both asserted to be true, so therefore Q must be true."
+
+Modus Tollens: It is an application of the general truth that if a statement is true, then so is its contra-positive.
+
+Elimination: valid argument form: It is the inference that if a statement P implies a statement Q and a statement R also implies Q, then if either P or R is true, then Q has to be true. 
+The reasoning is simple: since at least one of the statements P and R is true, and since either of them would be sufficient to entail Q, Q is certainly true.
+
+Transitivity: Valid Argument form: In mathematics, a binary relation R over a set X is transitive 
+if whenever an element a is related to an element b and b is related to an element c then a is also related to c. 

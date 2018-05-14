@@ -1,0 +1,101 @@
+#+TITLE: Special Projects
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+
+NOTE: You must get this approved by Brother Benning.
+
+* Special Project
+1. Week02 teach.org puzzle of the hats. 
+A: She has a white hat and can prove it.
+
+2. You are on an Island where there are only two types of individuals besides yourself, Knaves and Knights.  You have the following encounters with natives.
+a. Two natives A and B address you as follows: A says: Both of us are Knights.  B says: A is a knave.  What are A and B? 
+A: A. Knave, B. Knight
+
+b. Another two natives C and D approach you but only C speaks.  C says: Both of us are knaves.  What are C and D? 
+A: C. Knave D. Knight
+
+c. You then encounter natives E and F. E says F is a knave. F says: E is a knave.  How many knaves are there? 
+A: 1. Only 
+
+d. Finally you meet a group of six natives, U,V,W,X,Y,and Z, who speak to you as follows: 
+U says: None of us is a knight.
+A: Knave
+
+V says: at least three of us are knights.
+A: Knave
+
+W says: At most three of us are knights. 
+A: Knight
+
+X says: exactly five of us are knights. 
+A: Knave 
+
+Y says: Exactly two of us are knights. 
+A: Knight
+
+Z says: Exactly one of us is a Knight. 
+A: Knave
+Which are Knights and which are knaves? 
+
+3. Given the following information about a computer program, find the mistake in the program. 
+a. There is an undeclared variable or there is a syntax error in the first five lines. 
+b. If there is a syntax error in the first five lines, then there is a missing semicolon or a variable name is misspelled. 
+c. There is not a missing semicolon. d. There is not a misspelled variable name. 
+
+Mistake: There is an undeclared variable.
+
+4. Sharky, a leader of the underworld, was killed by one of his own band of four henchmen.  
+Detective Sharp interviewed the men and determined that all were lying except for one.  
+He deduced who killed sharky on the basis of the following statements: 
+a. Socko: Lefty killed Sharky. 
+b. Fats: Muscles didn’t kill Sharky. 
+c. Lefty: Muscles was shooting craps with Socko when Sharky was knocked off. 
+d. Muscles: Lefty didn’t kill Sharkky. Who killed Sharky? 
+
+5. Balance One morning, I observed Holmes rolling a shilling back and forth over his knuckles, from one finger to the next, with his other hand held behind his back.  
+“YOu can do a lot of mischief with a tricked coin, old friend,” he said. 
+ 
+“That looks real enough to me,”  I replied. “This? Oh, it is.  But surely you have heard of gamblers’ coins that are cunningly weighted to favour heads over tails, or vice versa?”
+ I allowed that I had indeed. “Such devices are nasty trap for the unwary. But it is possible to get a totally unbiased either/or result from any weighted coin.”
+ “Oh?” “Indeed.  Can you tell me how?” Can ​YOU​ work it out? 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+6. THE BEAST 2.0 Back-Story Several anthropology PhD candidates will each publish a dissertation this year about a different aboriginal culture they've been living with and studying. Match each student to the culture they've written about and the country in which it is located, and determine the month in which each dissertation will be published. 
+ 
+1.​ The student who has been studying the Haleyito culture will publish sometime after the student who has been working in Qatar. 
+2.​ The student who has been working in Pakistan will publish 1 month after Ollie. 
+3.​ Michael hasn't been studying the Burutia culture. 
+4.​ The person who has been studying the Warith culture will publish 1 month before the student who has been working in Denmark.
+5.​ The student who has been working in Denmark will publish 2 months before Doreen. 
+6.​ The student who has been studying the Eldang culture will publish 2 months before the student who has been studying the Xozix culture. 
+7.​ Yvette is either the student who has been working in Qatar or the person who has been working in Romania. 
+8.​ The student who has been working in Denmark will publish 4 months before the person who has been working in Haiti. 
+9.​ Floyd will publish in January. 
+10.​ Floyd will publish 5 months before Sonja. 
+11.​ Sonja hasn't been studying the Yersim culture. 
+12.​ Of the person who has been studying the Haleyito culture and the student who has been working in Oman, one is Keith and the other is Michael. 
+13.​ Sonja hasn't been studying the Burutia culture. 
+14.​ Michael will publish 2 months after Yvette. 
+15.​ The person who has been studying the Eldang culture will publish 1 month after the student who has been studying the Warith culture. 
+ 
+Remember as with Beast 1.0 there will be Names/Cultures/Countries not mentioned in the hints. X,Y,Z work fine. 
+ 
+Months     Names     Cultures     Countries 
+January    Floyd     Warith       Qatar
+February   Ollie     Eldang       Denmark
+March      Keith     Haleyito     Pakistan
+April      Doreen    Xozix        ???
+May        Yvette    Burutia      Romania
+June       Sonja     ??           Haiti
+July       Michael   Yersim       Oman
+ 

@@ -1,0 +1,56 @@
+#+TITLE: Elisp Code
+#+LANGUAGE: en
+#+OPTIONS: H:4 num:nil toc:nil \n:nil @:t ::t |:t ^:t *:t TeX:t LaTeX:t
+#+OPTIONS: html-postamble:nil
+#+STARTUP: showeverything entitiespretty
+
+NOTE: Comment your code, and verify it works for "breaking cases" i.e. 0! = 1.
+
+* Factorial Code
+** Code
+#+BEGIN_SRC emacs-lisp :results silent
+(defun factorial (n)
+  (if (= n 0)
+      1
+      (* n (factorial (- n 1))) ) )
+#+END_SRC
+** Test cases
+#+BEGIN_SRC emacs-lisp :results raw
+(factorial 0)
+#+END_SRC
+
+#+RESULTS:
+1
+
+#+BEGIN_SRC emacs-lisp :results raw
+(factorial 6)
+#+END_SRC
+
+#+RESULTS:
+720
+
+#+BEGIN_SRC emacs-lisp :results raw
+(factorial 59846151)
+#+END_SRC
+
+** How big a number will make your computer freeze?
+* "Real-World" function with mapcar
+** What is mapcar
+** Code
+#+BEGIN_SRC emacs-lisp
+
+#+END_SRC
+* Loop function
+** Code
+#+BEGIN_SRC emacs-lisp
+(loop for x from 1
+      for y = (* x 10)
+      while (< y 100)
+
+      do (print (* x 5))
+
+      collect y)
+#+END_SRC
+
+#+RESULTS:
+| 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 |
